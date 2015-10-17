@@ -1,0 +1,23 @@
+# OS generated files #
+######################
+.DS_Store
+ehthumbs.db
+# Icon? # What was this for?
+Thumbs.db
+
+# Node Files #
+##############
+node_modules
+npm-debug.log
+
+# Project Files #
+#################
+.tmp
+.sass-cache
+.idea/*
+*.iml
+_site
+coverage/*
+dist/*
+client/public/stylesheets/*.css
+config.codekit
