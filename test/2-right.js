@@ -12,19 +12,22 @@ var board = new five.Board().on("ready", function() {
    * servo instances (assuming 3 degrees of freedom)
    */
   ph.coxa = new five.Servo({
-    pin: 6,
-    startAt: 35,
-    range: [35, 110]
+    pin: 9,
+    startAt: 100,
+    offset: -15,
+    range: [50, 150]
   });
   ph.femur = new five.Servo({
-    pin: 5,
-    startAt: 50,
-    range: [50, 140]
+    pin: 8,
+    startAt: 65,
+    offset: -10,
+    range: [10, 140]
   });
   ph.tibia = new five.Servo({
-    pin: 3,
-    startAt: 10,
-    range: [10, 170]
+    pin: 7,
+    startAt: 45,
+    offset: 50,
+    range: [0, 80]
   });
 
   // Create a Servo.Array for those leg parts
@@ -81,6 +84,16 @@ var board = new five.Board().on("ready", function() {
 
   ph.stand = function() {
     legAnimation.enqueue(stand);
+  };
+
+  ph.sweep = function() {
+    ph.coxa.sweep();
+    setTimeout(function() {
+        ph.femur.sweep();
+    }, 50);
+    setTimeout(function() {
+        ph.tibia.sweep();
+    }, 100);
   };
 
   // Inject the `servo` hardware into;

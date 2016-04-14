@@ -12,17 +12,17 @@ var board = new five.Board().on("ready", function() {
    * servo instances (assuming 3 degrees of freedom)
    */
   ph.coxa = new five.Servo({
-    pin: 6,
+    pin: 3,
     startAt: 35,
     range: [35, 110]
   });
   ph.femur = new five.Servo({
-    pin: 5,
+    pin: 4,
     startAt: 50,
     range: [50, 140]
   });
   ph.tibia = new five.Servo({
-    pin: 3,
+    pin: 5,
     startAt: 10,
     range: [10, 170]
   });
